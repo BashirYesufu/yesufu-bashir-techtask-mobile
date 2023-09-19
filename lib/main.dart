@@ -38,14 +38,14 @@ class _MyAppState extends State<MyApp> {
         builder: (BuildContext context, WidgetRef ref, _) {
           final themePro = ref.watch(AppProviders.themeProvider);
           return MaterialApp(
-            title: 'Klasha',
+            title: 'Fridge',
             theme: themePro.theme == AppTheme.LIGHT || themePro.theme == AppTheme.SYSTEM
                 ? ThemeManager.sharedInstance.lightTheme
                 : ThemeManager.sharedInstance.darkTheme,
             darkTheme: themePro.theme == AppTheme.DARK || themePro.theme == AppTheme.SYSTEM
                 ? ThemeManager.sharedInstance.darkTheme
                 : null,
-            initialRoute: Routes.home,
+            initialRoute: Routes.splash,
             routes: Routes.generateRoutes(),
           );
         }
