@@ -121,14 +121,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.0.6"
-  dart_websocket:
-    dependency: transitive
-    description:
-      name: dart_websocket
-      sha256: "415747001e3f24176e12b4dca6766b2aff804e33a9edc029ae567225f77a943a"
-      url: "https://pub.dev"
-    source: hosted
-    version: "1.0.0"
   diff_match_patch:
     dependency: transitive
     description:
@@ -145,14 +137,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "5.3.2"
-  either_dart:
-    dependency: transitive
-    description:
-      name: either_dart
-      sha256: "70ed1a98d078ad81e44143624286c07c34ed8b8c7ac1949d686cba9110a732ef"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.1.4"
   equatable:
     dependency: "direct main"
     description:
@@ -248,22 +232,22 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.2"
-  hasura_connect:
-    dependency: transitive
+  google_fonts:
+    dependency: "direct main"
     description:
-      name: hasura_connect
-      sha256: bae4328c56faa39c21ecd909fcb643663f679ee3bead1c637504910de2859456
+      name: google_fonts
+      sha256: "0833bfcc1c32560ee51d381fcf1d6d6b35921e89afe852c12f83dc8c00b2e6bc"
       url: "https://pub.dev"
     source: hosted
-    version: "4.0.0+4"
+    version: "6.0.0"
   http:
     dependency: transitive
     description:
       name: http
-      sha256: "5895291c13fa8a3bd82e76d5627f69e0d85ca6a30dcac95c4ea19a5d555879c2"
+      sha256: "759d1a329847dd0f39226c688d3e06a6b8679668e350e2891a6474f8b4bb8525"
       url: "https://pub.dev"
     source: hosted
-    version: "0.13.6"
+    version: "1.1.0"
   http_multi_server:
     dependency: transitive
     description:
@@ -484,10 +468,10 @@ packages:
     dependency: "direct main"
     description:
       name: requests_inspector
-      sha256: "23afb84b29def2fe5951e82a78ddde4fd4911b8d5e90060facb7da2f98443320"
+      sha256: "588915b59d9d5775eedcbf73695040a717d9a7f2550949dc6365567fb927149b"
       url: "https://pub.dev"
     source: hosted
-    version: "2.5.0"
+    version: "2.4.0"
   riverpod:
     dependency: transitive
     description:
@@ -709,14 +693,6 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.2.0"
-  string_validator:
-    dependency: transitive
-    description:
-      name: string_validator
-      sha256: "50dd8ecf91db6a732f4a851eeae81ee12406eedc62d0da72f2d91a04a2d10dd8"
-      url: "https://pub.dev"
-    source: hosted
-    version: "0.3.0"
   term_glyph:
     dependency: transitive
     description:
