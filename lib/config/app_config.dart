@@ -8,10 +8,10 @@ class BaseUrl {
     _env = env;
     switch (env) {
       case Environment.SANDBOX:
-        _config = _BaseUrlConfig.sandboxConstants;
+        _config = _BaseUrlConfig.sandboxBaseUrl;
         break;
       case Environment.LIVE:
-        _config = _BaseUrlConfig.liveConstants;
+        _config = _BaseUrlConfig.liveBaseUrl;
         break;
     }
   }
@@ -29,11 +29,11 @@ class BaseUrl {
 class _BaseUrlConfig{
   static const BASE_URL = 'BaseUrl';
 
-  static Map<String, dynamic> sandboxConstants = {
+  static Map<String, dynamic> sandboxBaseUrl = {
     BASE_URL: "https://lb7u7svcm5.execute-api.ap-southeast-1.amazonaws.com/dev/",
   };
 
-  static Map<String, dynamic> liveConstants = {
+  static Map<String, dynamic> liveBaseUrl = {
     BASE_URL: "https://lb7u7svcm5.execute-api.ap-southeast-1.amazonaws.com/dev/",
   };
 }
