@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:tech_task/constants/color_path.dart';
 import 'package:tech_task/route_handler.dart';
 import '../widgets/app_scaffold.dart';
@@ -47,10 +48,14 @@ class _HomeScreenState extends State<HomeScreen> {
       child: Card(
         child: Padding(
           padding: const EdgeInsets.all(48.0),
-          child: Text(meal, style: Theme
-              .of(context)
-              .textTheme
-              .titleMedium,),
+          child: Text(
+            meal,
+            style: GoogleFonts.redHatDisplay(
+              color: ColorPath.primaryTextDark,
+              fontSize: 14,
+              fontWeight: FontWeight.w500,
+            ),
+          ),
         ),
         color: ColorPath.blue,
       ),

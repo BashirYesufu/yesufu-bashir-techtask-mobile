@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:tech_task/bloc/recipe_bloc.dart';
 import 'package:tech_task/constants/color_path.dart';
 import 'package:tech_task/widgets/app_scaffold.dart';
@@ -63,9 +64,11 @@ class _RecipesScreenState extends State<RecipesScreen> {
                             children: [
                               Text(
                                 indexSnapshot.data![index].title,
-                                style: Theme.of(context)
-                                    .textTheme
-                                    .titleMedium,
+                                style:  GoogleFonts.redHatDisplay(
+                                  color: ColorPath.primaryTextDark,
+                                  fontSize: 14,
+                                  fontWeight: FontWeight.w500,
+                                ),
                               ),
                             ],
                           ),
