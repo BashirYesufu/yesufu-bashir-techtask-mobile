@@ -1,9 +1,8 @@
 import 'package:fade_out_particle/fade_out_particle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
-
 import '../constants/image_path.dart';
-import '../routes.dart';
+import '../route_handler.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -37,7 +36,7 @@ class _SplashScreenState extends State<SplashScreen> {
               onAnimationEnd: (){
                 Navigator.pushReplacementNamed(
                   context,
-                  Routes.home,
+                  RouteHandler.ingredients,
                 );
               },
             ),

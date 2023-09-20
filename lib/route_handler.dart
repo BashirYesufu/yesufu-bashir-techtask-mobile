@@ -1,10 +1,10 @@
-import 'package:flutter/widgets.dart';
+import 'package:flutter/material.dart';
 import 'package:tech_task/screens/ingredients_screen.dart';
 import 'package:tech_task/screens/home_screen.dart';
 import 'package:tech_task/screens/recipes_screen.dart';
 import 'package:tech_task/screens/splash_screen.dart';
 
-class Routes {
+class RouteHandler {
   static const splash = "/splash";
   static const recipes = "/recipes";
   static const ingredients = "/ingredients";
@@ -13,8 +13,23 @@ class Routes {
 
   static Map<String, WidgetBuilder> generateRoutes() => {
     splash: (context) => SplashScreen(),
-    recipes: (context) => RecipesScreen(),
     ingredients: (context) => IngredientsScreen(),
     home: (context) => HomeScreen(),
   };
+
+  static Route<dynamic>? generatedRoute(RouteSettings route) {
+    switch (route.name) {
+
+      case recipes:
+        final args = route.arguments as List<String>;
+        return MaterialPageRoute(builder: (context) {
+          return RecipesScreen(ingredients: args);
+        });
+
+      default:
+        return null;
+    }
+  }
+
+
 }

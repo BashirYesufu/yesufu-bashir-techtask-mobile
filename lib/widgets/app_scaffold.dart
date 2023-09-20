@@ -2,10 +2,11 @@ import 'dart:async';
 import 'package:blurry_modal_progress_hud/blurry_modal_progress_hud.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:lottie/lottie.dart';
 import '../constants/lottie_path.dart';
 
-class ShillingScaffold extends ConsumerStatefulWidget {
+class AppScaffold extends ConsumerStatefulWidget {
   final Stream<bool>? loadingStream;
   final Color? appBarColor;
   final Color? backgroundColor;
@@ -18,7 +19,7 @@ class ShillingScaffold extends ConsumerStatefulWidget {
   final AppBar? appBar;
   final CrossAxisAlignment crossAxisAlignment;
 
-  const ShillingScaffold({
+  const AppScaffold({
     this.loadingStream,
     this.appBarColor,
     this.backgroundColor,
@@ -34,10 +35,10 @@ class ShillingScaffold extends ConsumerStatefulWidget {
   }) : super(key: key);
 
   @override
-  ConsumerState<ShillingScaffold> createState() => _ShillingScaffoldState();
+  ConsumerState<AppScaffold> createState() => _AppScaffoldState();
 }
 
-class _ShillingScaffoldState extends ConsumerState<ShillingScaffold> {
+class _AppScaffoldState extends ConsumerState<AppScaffold> {
 
   @override
   Widget build(BuildContext context) {
@@ -69,9 +70,7 @@ class _ShillingScaffoldState extends ConsumerState<ShillingScaffold> {
                         title: widget.appBarTitle != null
                             ? Text(
                           widget.appBarTitle!,
-                          // style: Theme.of(context).brightness == Brightness.dark
-                          //     ? AppTextStyles.white(18, weight: FontWeight.w700)
-                          //     : AppTextStyles.black(18, weight: FontWeight.w700),
+                          style: GoogleFonts.redHatDisplay(fontSize: 18, fontWeight: FontWeight.w700),
                         )
                             : null,
                         actions: widget.trailing,
@@ -79,7 +78,7 @@ class _ShillingScaffoldState extends ConsumerState<ShillingScaffold> {
                         leading: widget.leading != null ? widget.leading : widget.hasBackButton
                             ? InkWell(
                           onTap: () {
-                            // AppNavigator.goBack(context);
+                            Navigator.pop(context);
                           },
                           child: Icon(
                             Icons.arrow_back_ios,

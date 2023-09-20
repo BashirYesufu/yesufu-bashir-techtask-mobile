@@ -7,8 +7,8 @@ class RecipesRepositoryImpl implements RecipesRepository{
   final _service = RecipesApiService();
 
   @override
-  Future<List<Recipe>> fetchRecipes() {
-    return _service.fetchRecipes();
+  Future<List<Recipe>> fetchRecipes(List<String> ingredients) {
+    return _service.fetchRecipes(ingredients);
   }
 
 }

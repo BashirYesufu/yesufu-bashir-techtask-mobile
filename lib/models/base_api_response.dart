@@ -14,8 +14,8 @@ class BaseApiResponse<T> extends Equatable {
   );
 
   BaseApiResponse.fromJson(Response<dynamic>? json) {
-    message = json?.data?['message'] ?? "An error occurred while processing this request";
     data = json?.data;
+    message = data!=null ? "Success" : "An error occurred while processing this request";
     success = data!=null || json?.statusCode == 200;
   }
 

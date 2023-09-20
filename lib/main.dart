@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:requests_inspector/requests_inspector.dart';
-import 'package:tech_task/routes.dart';
+import 'package:tech_task/route_handler.dart';
 import 'package:tech_task/utilities/providers/app_providers.dart';
 import 'package:tech_task/utilities/shared_pref.dart';
 import 'package:tech_task/utilities/theme_manager.dart';
 
-void main() => runApp(
-      RequestsInspector(
-        enabled: false,
-        showInspectorOn: ShowInspectorOn.LongPress,
-        child: ProviderScope(
-          child: MyApp(),
-        ),
+import 'config/app_config.dart';
+
+void main() {
+  BaseUrl.setEnvironment(Environment.SANDBOX);
+  runApp(
+    RequestsInspector(
+      enabled: true,
+      showInspectorOn: ShowInspectorOn.LongPress,
+      child: ProviderScope(
+        child: MyApp(),
       ),
-    );
+    ),
+  );
+}
 
 class MyApp extends StatefulWidget {
 
@@ -38,6 +43,7 @@ class _MyAppState extends State<MyApp> {
         builder: (BuildContext context, WidgetRef ref, _) {
           final themePro = ref.watch(AppProviders.themeProvider);
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             title: 'Fridge',
             theme: themePro.theme == AppTheme.LIGHT || themePro.theme == AppTheme.SYSTEM
                 ? ThemeManager.sharedInstance.lightTheme
@@ -45,8 +51,9 @@ class _MyAppState extends State<MyApp> {
             darkTheme: themePro.theme == AppTheme.DARK || themePro.theme == AppTheme.SYSTEM
                 ? ThemeManager.sharedInstance.darkTheme
                 : null,
-            initialRoute: Routes.splash,
-            routes: Routes.generateRoutes(),
+            initialRoute: RouteHandler.splash,
+            routes: RouteHandler.generateRoutes(),
+            onGenerateRoute: RouteHandler.generatedRoute,
           );
         }
     );

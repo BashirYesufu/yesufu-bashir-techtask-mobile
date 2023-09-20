@@ -1,6 +1,6 @@
 class ApiURLs {
 
   static const ingredients = "ingredients";
-  static recipes(String ingredient) => "recipes?ingredients=$ingredient";
+  static recipes(List<String> ingredients) => "recipes?ingredients=${ingredients.join(',')}";
 
 }
