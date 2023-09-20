@@ -1,7 +1,7 @@
 import 'package:fade_out_particle/fade_out_particle.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import '../constants/image_path.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:tech_task/constants/color_path.dart';
 import '../route_handler.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -28,15 +28,19 @@ class _SplashScreenState extends State<SplashScreen> {
             child: FadeOutParticle(
               disappear: true,
               curve: Curves.easeIn,
-              duration: Duration(milliseconds: 1500),
-              child: SvgPicture.asset(
-                  ImagePath.splash,
-                  semanticsLabel: 'Fridge'
+              duration: Duration(milliseconds: 3000),
+              child: Text(
+                  "Fridge",
+                style: GoogleFonts.redHatDisplay(
+                  fontSize: 64,
+                  fontWeight: FontWeight.w900,
+                  color: ColorPath.blue
+                ),
               ),
               onAnimationEnd: (){
                 Navigator.pushReplacementNamed(
                   context,
-                  RouteHandler.ingredients,
+                  RouteHandler.home,
                 );
               },
             ),

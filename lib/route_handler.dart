@@ -13,7 +13,6 @@ class RouteHandler {
 
   static Map<String, WidgetBuilder> generateRoutes() => {
     splash: (context) => SplashScreen(),
-    ingredients: (context) => IngredientsScreen(),
     home: (context) => HomeScreen(),
   };
 
@@ -24,6 +23,12 @@ class RouteHandler {
         final args = route.arguments as List<String>;
         return MaterialPageRoute(builder: (context) {
           return RecipesScreen(ingredients: args);
+        });
+
+      case ingredients:
+        final args = route.arguments as String;
+        return MaterialPageRoute(builder: (context) {
+          return IngredientsScreen(meal: args);
         });
 
       default:

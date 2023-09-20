@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:tech_task/bloc/ingredient_bloc.dart';
 import 'package:tech_task/route_handler.dart';
 import 'package:tech_task/utilities/ui_actions.dart';
@@ -9,14 +10,14 @@ import '../models/ingredient.dart';
 import '../widgets/custom_checkbox.dart';
 
 class IngredientsScreen extends StatefulWidget {
-  const IngredientsScreen({Key? key}) : super(key: key);
+  const IngredientsScreen({required this.meal, Key? key}) : super(key: key);
+  final String meal;
 
   @override
   State<IngredientsScreen> createState() => _IngredientsScreenState();
 }
 
 class _IngredientsScreenState extends State<IngredientsScreen> {
-  PageController controller = PageController(viewportFraction: 0.9, keepPage: true);
   IngredientBloc _ingredientBloc = IngredientBloc();
   List<String> selectedIngredients = [];
   List<bool> checkValue = [];
@@ -41,7 +42,7 @@ class _IngredientsScreenState extends State<IngredientsScreen> {
   Widget build(BuildContext context) {
     return AppScaffold(
       loadingStream: _ingredientBloc.progressObservable,
-      appBarTitle: 'Ingredients',
+      appBarTitle: '${widget.meal}',
       body: SafeArea(
         child: StreamBuilder(
           stream: _ingredientBloc.ingredientsResponse,
@@ -76,7 +77,7 @@ class _IngredientsScreenState extends State<IngredientsScreen> {
                                         ),
                                         SizedBox(height: 8),
                                         Text(
-                                          'Expires ${indexSnapshot.data![index].useBy}',
+                                          'Expires ${DateFormat('dd MMM, yyyy').format(indexSnapshot.data![index].useBy)}',
                                         ),
                                       ],
                                     ),
@@ -139,12 +140,6 @@ class _IngredientsScreenState extends State<IngredientsScreen> {
             }
             else {
               return SizedBox();
-              // return Center(
-              //   child: CupertinoActivityIndicator(
-              //     animating: true,
-              //     color: ColorPath.purple,
-              //   ),
-              // );
             }
           },
         ),
@@ -169,43 +164,3 @@ class _IngredientsScreenState extends State<IngredientsScreen> {
 
 
 }
-
-
-
-// SizedBox(
-// width: MediaQuery.of(context).size.width,
-// height:  MediaQuery.of(context).size.height / 1.5,
-// child: PageView(
-// controller: controller,
-// physics: BouncingScrollPhysics(),
-// onPageChanged: (int page) {
-//
-// },
-// children: List.generate(indexSnapshot.data!.length,
-// (index) => Padding(
-// padding: const EdgeInsets.symmetric(horizontal: 8.0),
-// child: Container(
-// width: 233,
-// decoration: ShapeDecoration(
-// color: Color(0xFF1E2C38),
-// shape: RoundedRectangleBorder(
-// borderRadius: BorderRadius.circular(20),
-// ),
-// ),
-// child: Padding(
-// padding: const EdgeInsets.all(16.0),
-// child: Column(
-// children: [
-// Text(
-// indexSnapshot.data![index].title,
-// style: Theme.of(context).textTheme.titleMedium,
-// ),
-// SvgPicture.asset(ImagePath.plate)
-// ],
-// ),
-// ),
-// ),
-// ),
-// ),
-// ),
-// ),
