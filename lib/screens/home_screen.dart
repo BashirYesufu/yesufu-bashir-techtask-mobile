@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
+import 'package:tech_task/constants/color_path.dart';
 import 'package:tech_task/widgets/app_input_field.dart';
 import '../route_handler.dart';
 import '../widgets/app_button.dart';
@@ -28,6 +29,14 @@ class _HomeScreenState extends State<HomeScreen> {
     return AppScaffold(
       hasBackButton: false,
       appBarTitle: 'Home',
+      trailing: [
+        InkWell(
+          onTap: (){
+            Navigator.pushNamed(context, RouteHandler.settings);
+          },
+          child: Icon(Icons.settings),
+        ),
+      ],
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
@@ -60,6 +69,8 @@ class _HomeScreenState extends State<HomeScreen> {
                     hintText: 'Date',
                     enabled: false,
                     controller: dateTC,
+                    onCard: true,
+                    borderColor: ColorPath.blue,
                   ),
                 ),
               ],

@@ -10,14 +10,11 @@ dependencies:
   flutter:
     sdk: flutter
   cupertino_icons: ^1.0.2
-  flutter_svg: ^2.0.0+1
   dio:
   rxdart: ^0.27.5
   smooth_page_indicator: ^1.1.0
   fade_out_particle: ^1.2.1
   requests_inspector: ^2.3.2
-  flutter_bloc: ^8.1.1
-  bloc_test: ^9.1.0
   mocktail: ^0.3.0
   equatable: ^2.0.5
   flutter_riverpod: ^2.3.6
