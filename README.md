@@ -6,7 +6,7 @@ Get ingredients from storage and recommend meal recipes using selected recipes.
 
 ## Screenshots of the app
 
-<p float="left">
+<p float="center">
   <img src="documentation/light-evidence.gif" height="500"/>
   <img src="documentation/evidence.gif" height="500"/>
 </p>
