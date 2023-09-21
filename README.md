@@ -1,6 +1,9 @@
 # yesufu-bashir-techtask-mobile
 
-# Fridge - Get ingredients from storage and recommend meal recipes using selected recipes.
+# Fridge 
+Get ingredients from storage and recommend meal recipes using selected recipes.
+
+
 ## Screenshots of the app
 
 <table>
