@@ -10,8 +10,8 @@ import '../models/ingredient.dart';
 import '../widgets/custom_checkbox.dart';
 
 class IngredientsScreen extends StatefulWidget {
-  const IngredientsScreen({required this.meal, Key? key}) : super(key: key);
-  final String meal;
+  const IngredientsScreen({required this.date, Key? key}) : super(key: key);
+  final DateTime date;
 
   @override
   State<IngredientsScreen> createState() => _IngredientsScreenState();
@@ -42,7 +42,7 @@ class _IngredientsScreenState extends State<IngredientsScreen> {
   Widget build(BuildContext context) {
     return AppScaffold(
       loadingStream: _ingredientBloc.progressObservable,
-      appBarTitle: '${widget.meal}',
+      appBarTitle: '${DateFormat('dd MMM, yyyy').format(widget.date)}',
       body: SafeArea(
         child: StreamBuilder(
           stream: _ingredientBloc.ingredientsResponse,
@@ -85,7 +85,7 @@ class _IngredientsScreenState extends State<IngredientsScreen> {
                                 ],
                               ),
                             ),
-                            CustomCheckBox(
+                            widget.date.isAfter(indexSnapshot.data![index].useBy) ? SizedBox() : CustomCheckBox(
                               value: checkValue[index],
                               shouldShowBorder: checkValue[index],
                               splashColor: ColorPath.blue.withOpacity(0.4),

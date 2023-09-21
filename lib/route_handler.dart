@@ -26,9 +26,9 @@ class RouteHandler {
         });
 
       case ingredients:
-        final args = route.arguments as String;
+        final args = route.arguments as DateTime;
         return MaterialPageRoute(builder: (context) {
-          return IngredientsScreen(meal: args);
+          return IngredientsScreen(date: args);
         });
 
       default:

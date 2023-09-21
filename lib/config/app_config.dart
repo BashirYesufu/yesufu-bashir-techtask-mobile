@@ -1,4 +1,4 @@
-enum Environment { SANDBOX, LIVE }
+enum Environment { SANDBOX, LIVE, TEST }
 
 class BaseUrl {
   static Map<String, dynamic>?  _config;
@@ -12,6 +12,8 @@ class BaseUrl {
         break;
       case Environment.LIVE:
         _config = _BaseUrlConfig.liveBaseUrl;
+      case Environment.TEST:
+        _config = _BaseUrlConfig.testBaseUrl;
         break;
     }
   }
@@ -35,5 +37,9 @@ class _BaseUrlConfig{
 
   static Map<String, dynamic> liveBaseUrl = {
     BASE_URL: "https://lb7u7svcm5.execute-api.ap-southeast-1.amazonaws.com/dev/",
+  };
+
+  static Map<String, dynamic> testBaseUrl = {
+    BASE_URL: "https://test.com/",
   };
 }

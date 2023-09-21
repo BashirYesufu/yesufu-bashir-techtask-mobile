@@ -19,7 +19,7 @@ class IngredientsApiService {
         completer.complete(result);
       }
     } catch (e) {
-      completer.completeError(e.toString());
+      completer.completeError(e);
     }
     return completer.future;
   }

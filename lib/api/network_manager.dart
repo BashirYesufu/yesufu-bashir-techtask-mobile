@@ -10,8 +10,8 @@ import '../models/base_api_response.dart';
 class NetworkManager{
   static BaseOptions options = BaseOptions(
       baseUrl:BaseUrl.BASE_URL,
-      connectTimeout: Duration(milliseconds: 60000),
-      receiveTimeout: Duration(milliseconds: 100000),
+      connectTimeout: Duration(milliseconds: 30000),
+      receiveTimeout: Duration(milliseconds: 50000),
   );
   Dio client = Dio(options)..interceptors.add(RequestsInspectorInterceptor());
 
@@ -39,7 +39,7 @@ class NetworkManager{
             }
           });
           if(response.statusCode==204){
-            apiResponse = BaseApiResponse("Success",{"status": "Success"},true);
+            apiResponse = BaseApiResponse("Success",{"status": "Success"},true, 200);
           }else{
             apiResponse = BaseApiResponse.fromJson(response);
           }

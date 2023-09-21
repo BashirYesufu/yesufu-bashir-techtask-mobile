@@ -39,17 +39,15 @@ class _RecipesScreenState extends State<RecipesScreen> {
             }
             if (indexSnapshot.hasData &&
                 indexSnapshot.data?.isNotEmpty == true) {
-              return Padding(
-                padding: const EdgeInsets.symmetric(vertical: 40),
+              return SizedBox(
+                height: 500,
                 child: PageView(
                   controller: controller,
                   physics: BouncingScrollPhysics(),
                   onPageChanged: (int page) {},
                   children: List.generate(
-                    indexSnapshot.data!.length,
-                        (index) => Padding(
-                      padding:
-                      const EdgeInsets.symmetric(horizontal: 8.0),
+                    indexSnapshot.data!.length, (index) => Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
                       child: Container(
                         width: 233,
                         decoration: ShapeDecoration(
@@ -61,22 +59,57 @@ class _RecipesScreenState extends State<RecipesScreen> {
                         child: Padding(
                           padding: const EdgeInsets.all(16.0),
                           child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
                               Text(
                                 indexSnapshot.data![index].title,
                                 style:  GoogleFonts.redHatDisplay(
                                   color: ColorPath.primaryTextDark,
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w500,
+                                  fontSize: 28,
+                                  fontWeight: FontWeight.w600,
                                 ),
                               ),
+                              Padding(
+                                padding: const EdgeInsets.only(top: 30.0, bottom: 10),
+                                child: Text('Ingredients',
+                                  style:  GoogleFonts.redHatDisplay(
+                                  color: ColorPath.primaryTextDark,
+                                  fontSize: 14,
+                                ),
+                                ),
+                              ),
+                              Column(
+                                crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: List.generate(
+                                      indexSnapshot.data![index].ingredients.length,
+                                      (index2) => Text(
+                                        indexSnapshot.data![index].ingredients[index2],
+                                        style: GoogleFonts.redHatDisplay(
+                                          color: ColorPath.primaryTextDark,
+                                          fontSize: 12,
+                                        ),
+                                      ),
+                                  ),
+                                ),
+                              Spacer(),
+                              Row(
+                                mainAxisAlignment: MainAxisAlignment.end,
+                                children: [
+                                  Icon(
+                                    Icons.fastfood_sharp,
+                                    size: 154,
+                                    color: Colors.white,
+                                  ),
+                                ],
+                              )
                             ],
                           ),
                         ),
                       ),
                     ),
                   ),
-                )
+                ),
               );
             }
             if (indexSnapshot.hasData && indexSnapshot.data?.isEmpty == true) {
