@@ -15,7 +15,7 @@ Get ingredients from storage and recommend meal recipes using selected recipes.
     <img align="right" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/yesufu-bashir-techtask-mobile/main/documentation/light-evidence.gif" width="300" height="700" />
   </td>
   <td>
-    <img align="right" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/yesufu-bashir-techtask-mobile/main/documentation/evidence-image.png" width="300" height="700" />
+    <img align="right" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/yesufu-bashir-techtask-mobile/main/documentation/evidence-image.png" width="400" height="700" />
   </td>
  </tr>
 </table>
