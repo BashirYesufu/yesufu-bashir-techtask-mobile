@@ -9,7 +9,6 @@ Get ingredients from storage and recommend meal recipes using selected recipes.
 <p float="center">
   <img src="documentation/light-evidence.gif" height="500"/>
   <img src="documentation/evidence.gif" height="500"/>
-  <img src="documentation/evidence-image.png" height="500"/>
 </p>
 
 ## Getting Started
