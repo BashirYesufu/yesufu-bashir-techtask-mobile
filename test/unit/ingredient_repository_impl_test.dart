@@ -23,62 +23,23 @@ void main() {
 
   group('Fetch List Of Ingredients', () {
 
-    test('Throws wrong status code', () async {
+    test('Return null value for ingredients', () async {
       when(() => client.get(ApiURLs.ingredients))
           .thenAnswer(
             (_) => Future.value(
               Response(requestOptions: RequestOptions(path: ApiURLs.ingredients),
-                  data:BaseApiResponse('Network timed out, please check your network connection and try again', [], false, 404)
+                  data: null
               )
         ),
       );
 
-      // verify(client.get(ApiURLs.ingredients) as Function());
-      // verifyNoMoreInteractions(networkManager);
-
       expect(
-        await repository.fetchIngredients(),
-          BaseApiResponse('Network timed out, please check your network connection and try again', [], false, 404)
+        await networkManager.makeRequest(RequestType.GET, ApiURLs.ingredients),
+        null
       );
     });
 
-    // test('Wrong response data type throws error', () async {
-    //   when(() => client.get(Uri.parse(repository.ingredientsEndpoint)))
-    //       .thenAnswer(
-    //         (_) => Future.value(
-    //       http.Response(json.encode('Wrong body type'), 200),
-    //     ),
-    //   );
-    //
-    //   expect(
-    //     await repository.getIngredients(),
-    //     BaseResponse<List<IngredientModel>>.withError(
-    //         repository.invalidResponseError),
-    //   );
-    // });
-    //
-    // test('Succeeds when response has right status code and data type',
-    //         () async {
-    //       final response = [
-    //         {
-    //           'title': 'Ingredient1',
-    //           'use-by': '2000-01-02',
-    //         }
-    //       ];
-    //       when(() => client.get(Uri.parse(repository.ingredientsEndpoint)))
-    //           .thenAnswer(
-    //             (_) => Future.value(
-    //           http.Response(json.encode(response), 200),
-    //         ),
-    //       );
-    //
-    //       expect(
-    //         await repository.getIngredients(),
-    //         BaseResponse<List<IngredientModel>>.withData(
-    //           response.map(IngredientModel.fromJson).toList(),
-    //         ),
-    //       );
-    //     });
+
   });
 
 }

@@ -15,7 +15,7 @@ class NetworkManager{
   );
   Dio client = Dio(options)..interceptors.add(RequestsInspectorInterceptor());
 
-  Future<BaseApiResponse> makeRequest(RequestType vrxRequestType, String requestUrl, {dynamic body, queryParameters,
+  Future<BaseApiResponse>? makeRequest(RequestType vrxRequestType, String requestUrl, {dynamic body, queryParameters,
    BehaviorSubject<int>? progressStream, File? backFile}) async{
 
     late BaseApiResponse apiResponse;

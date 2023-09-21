@@ -14,8 +14,8 @@ class IngredientsApiService {
         RequestType.GET,
         ApiURLs.ingredients,
       );
-      if (response.success) {
-        var result = List<Ingredient>.from(response.data.map((x) => Ingredient.fromJson(x)));
+      if (response?.success == true) {
+        var result = List<Ingredient>.from(response?.data.map((x) => Ingredient.fromJson(x)));
         completer.complete(result);
       }
     } catch (e) {
