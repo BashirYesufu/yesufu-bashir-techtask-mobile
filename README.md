@@ -12,7 +12,7 @@ Get ingredients from storage and recommend meal recipes using selected recipes.
 </p>
 
 ## Getting Started
-This repository contain the code for the Fridge App. This project was written using the Flutter 3.13.4 SDK and Dart programming Language. If you're new to Flutter and Dart, Check out the SDK at https://www.flutter.dev and the language at https://dart.dev/.
+This repository contain the code for the Fridge App built using Reactive Programming and the observer pattern. This project was written using the Flutter 3.13.4 SDK and Dart programming Language. If you're new to Flutter and Dart, Check out the SDK at https://www.flutter.dev and the language at https://dart.dev/.
 
 ## How to Use
 
@@ -50,6 +50,7 @@ I have added a request inspector to enable you see api calls while running the a
 * [Shared Preferences] - Local Data Persistence
 * [Lottie] - Custom Loading State Widget
 * [Country Picker] - For displaying bottom sheet of countries
+* [RxDart] - For Reactive programming
 
 
 ### Notice
