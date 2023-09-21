@@ -6,19 +6,10 @@ Get ingredients from storage and recommend meal recipes using selected recipes.
 
 ## Screenshots of the app
 
-<table>
- <tr>
-  <td>
-   <img align="left" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/yesufu-bashir-techtask-mobile/main/documentation/evidence.gif" width="300" height="700" />
-  </td>
-  <td>
-    <img align="right" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/yesufu-bashir-techtask-mobile/main/documentation/light-evidence.gif" width="300" height="700" />
-  </td>
-  <td>
-    <img align="right" alt="IMG" src="https://raw.githubusercontent.com/BashirYesufu/yesufu-bashir-techtask-mobile/main/documentation/evidence-image.png" width="400" height="700" />
-  </td>
- </tr>
-</table>
+<p float="left">
+  <img src="documentation/light-evidence.gif" height="500"/>
+  <img src="documentation/evidence.gif" height="500"/>
+</p>
 
 ## Getting Started
 This repository contain the code for the Fridge App. This project was written using the Flutter 3.13.4 SDK and Dart programming Language. If you're new to Flutter and Dart, Check out the SDK at https://www.flutter.dev and the language at https://dart.dev/.
