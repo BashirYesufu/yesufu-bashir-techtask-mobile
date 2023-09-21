@@ -3,6 +3,7 @@ import 'package:intl/intl.dart';
 import 'package:tech_task/bloc/ingredient_bloc.dart';
 import 'package:tech_task/route_handler.dart';
 import 'package:tech_task/utilities/ui_actions.dart';
+import 'package:tech_task/utilities/widget_keys.dart';
 import 'package:tech_task/widgets/app_button.dart';
 import 'package:tech_task/widgets/app_scaffold.dart';
 import '../constants/color_path.dart';
@@ -41,6 +42,7 @@ class _IngredientsScreenState extends State<IngredientsScreen> {
   @override
   Widget build(BuildContext context) {
     return AppScaffold(
+      key: WidgetKeys.dateIngredientsList,
       loadingStream: _ingredientBloc.progressObservable,
       appBarTitle: '${DateFormat('dd MMM, yyyy').format(widget.date)}',
       body: SafeArea(
@@ -54,7 +56,7 @@ class _IngredientsScreenState extends State<IngredientsScreen> {
               return Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child:  ListView.builder(
-                  itemCount: indexSnapshot.data?.length,
+                    itemCount: indexSnapshot.data?.length,
                     itemBuilder: (context, index) {
                       return Padding(
                         padding: const EdgeInsets.symmetric(vertical: 16.0),

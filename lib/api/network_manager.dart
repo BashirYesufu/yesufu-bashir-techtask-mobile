@@ -9,7 +9,7 @@ import '../models/base_api_response.dart';
 
 class NetworkManager{
   static BaseOptions options = BaseOptions(
-      baseUrl:BaseUrl.BASE_URL,
+      baseUrl:AppConfig.BASE_URL,
       connectTimeout: Duration(milliseconds: 30000),
       receiveTimeout: Duration(milliseconds: 50000),
   );
@@ -19,7 +19,7 @@ class NetworkManager{
    BehaviorSubject<int>? progressStream, File? backFile}) async{
 
     late BaseApiResponse apiResponse;
-    var baseUrl =  BaseUrl.BASE_URL;
+    var baseUrl =  AppConfig.BASE_URL;
     String url = '$baseUrl$requestUrl';
 
     try{

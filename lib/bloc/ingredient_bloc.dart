@@ -9,12 +9,14 @@ class IngredientBloc extends BaseBloc {
 
   final _ingredientsSubject = PublishSubject<List<Ingredient>>();
   Stream<List<Ingredient>> get ingredientsResponse => _ingredientsSubject.stream;
+  Function(List<Ingredient>) get addIngredients => _ingredientsSubject.sink.add;
+
 
   void fetchIngredients() async {
     try {
       this.triggerProgress(true);
       await _repo.fetchIngredients().then((response) {
-        _ingredientsSubject.sink.add(response);
+        addIngredients(response);
         this.triggerProgress(false);
       }, onError: (e) {
         _ingredientsSubject.sink.addError(e);

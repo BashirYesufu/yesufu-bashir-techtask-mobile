@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 import 'package:tech_task/constants/color_path.dart';
+import 'package:tech_task/utilities/widget_keys.dart';
 import 'package:tech_task/widgets/app_input_field.dart';
 import '../route_handler.dart';
 import '../widgets/app_button.dart';
@@ -82,6 +83,7 @@ class _HomeScreenState extends State<HomeScreen> {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 16.0),
           child: AppPrimaryButton(
+              key: WidgetKeys.homeGetIngredientsBtn,
               label: 'Get Ingredients',
               onTap: (){
                 Navigator.pushNamed(context, RouteHandler.ingredients, arguments: selectDate);

@@ -9,19 +9,22 @@ import 'package:tech_task/utilities/theme_manager.dart';
 import 'config/app_config.dart';
 
 void main() {
-  BaseUrl.setEnvironment(Environment.SANDBOX);
+  AppConfig.setEnvironment(Environment.SANDBOX);
   runApp(
     RequestsInspector(
       enabled: true,
       showInspectorOn: ShowInspectorOn.LongPress,
       child: ProviderScope(
-        child: MyApp(),
+        child: MyApp(test: false),
       ),
     ),
   );
 }
 
 class MyApp extends StatefulWidget {
+  @override
+  const MyApp({required this.test, Key? key}) : super(key: key);
+  final bool test;
 
   @override
   State<MyApp> createState() => _MyAppState();
@@ -51,7 +54,7 @@ class _MyAppState extends State<MyApp> {
             darkTheme: themePro.theme == AppTheme.DARK || themePro.theme == AppTheme.SYSTEM
                 ? ThemeManager.sharedInstance.darkTheme
                 : null,
-            initialRoute: RouteHandler.splash,
+            initialRoute: widget.test ? RouteHandler.home : RouteHandler.splash,
             routes: RouteHandler.generateRoutes(),
             onGenerateRoute: RouteHandler.generatedRoute,
           );
